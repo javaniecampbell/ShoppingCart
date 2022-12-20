@@ -10,6 +10,13 @@ namespace ShoppingCart.Api.Repositories
         public CartRepository() {
             _dbContext = new ShoppingCartDbContext();
         }
+
+        public void CreateCart(Cart cart)
+        {
+           _dbContext.Carts.Add(cart);
+            _dbContext.SaveChanges();
+        }
+
         public Cart GetCart(Guid id)
         {
           return _dbContext.Carts.Find(id);

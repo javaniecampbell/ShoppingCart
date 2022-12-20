@@ -9,9 +9,6 @@ namespace ShoppingCart.Api.Data
             : base("name=DefaultConnnection")
         {
         }
-        public ShoppingCartDbContext(DbContextOptions options) : base(options)
-        {
-        }
 
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }

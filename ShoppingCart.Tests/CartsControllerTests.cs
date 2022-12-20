@@ -16,7 +16,6 @@ namespace ShoppingCart.Tests
         public void Should_Return_EmptyCart_WithId()
         {
             CartsController sut = new CartsController(new CartService());
-
             string customerId = Guid.NewGuid().ToString();
             var actual =  sut.Get(customerId) as OkObjectResult;
             CartDTO cart = actual?.Value as CartDTO;  
